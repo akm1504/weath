@@ -1,7 +1,6 @@
 const { Telegraf, Markup } = require('telegraf');
 const axios = require('axios');
-const config = require('./config')
-
+require('dotenv').config();
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
 bot.start((ctx) => {
