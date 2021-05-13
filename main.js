@@ -2,7 +2,7 @@ const { Telegraf, Markup } = require('telegraf');
 const axios = require('axios');
 const config = require('./config')
 
-const bot = new Telegraf(config.BOT_TOKEN);
+const bot = new Telegraf(process.env.BOT_TOKEN);
 
 bot.start((ctx) => {
     try {
