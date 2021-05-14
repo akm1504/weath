@@ -2,6 +2,11 @@ const { Telegraf, Markup } = require('telegraf');
 const axios = require('axios');
 const config = require('./config');
 const bot = new Telegraf(config.BOT_TOKEN);
+const API_TOKEN = process.env.API_TOKEN || '';
+const PORT = process.env.PORT || 3000;
+const URL = process.env.URL || 'https://weatherrrbot.herokuapp.com/';
+bot.telegram.setWebhook(`${URL}/bot${API_TOKEN}`);
+bot.startWebhook(`/bot${API_TOKEN}`, null, PORT)
 
 bot.start((ctx) => {
     try {
